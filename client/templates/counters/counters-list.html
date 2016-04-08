@@ -1,0 +1,11 @@
+<template name="countersList">
+
+    {{#if currentUser}}
+        <a href="" id="logout"> Salir </a>
+    {{else}}
+        <a href="{{pathFor 'admin'}}" > Entrar </a>
+    {{/if}}
+
+    {{>counterOne}}
+
+</template>
