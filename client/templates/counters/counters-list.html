@@ -6,6 +6,8 @@
         <a href="{{pathFor 'admin'}}" > Entrar </a>
     {{/if}}
 
-    {{>counterOne}}
+    {{#each counters}}
+        {{>counterItem}}
+    {{/each}}
 
 </template>
