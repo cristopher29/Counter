@@ -14,9 +14,14 @@ Meteor.methods({
     },
     decrease: function(counterId){
         var counter = Counter.findOne({_id: counterId});
-        if(counter) {
+        if(counter && counter.value < 1) {
+            Counter.update(counterId,{$set:{value: 999}});
+        }else {
             Counter.update(counterId,{$inc:{value: -1}});
         }
+    },
+    reset: function(counterId){
+        Counter.update(counterId,{$set:{value: 0}});
     }
 
 });

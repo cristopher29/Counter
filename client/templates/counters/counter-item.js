@@ -7,6 +7,16 @@ Template.counterItem.events({
         e.preventDefault();
         var counterId = this._id;
         Meteor.call('add', counterId);
+    },
+    'click #dec': function(e,t){
+        e.preventDefault();
+        var counterId = this._id;
+        Meteor.call('decrease', counterId);
+    },
+    'click #reset': function(e,t){
+        e.preventDefault();
+        var counterId = this._id;
+        Meteor.call('reset', counterId);
     }
 });
 
